@@ -26,7 +26,7 @@ export function CoffeeKhqr() {
         <figure className="mx-auto w-full max-w-[240px] shrink-0 sm:mx-0">
           <div className="overflow-hidden rounded-2xl bg-white p-2 shadow-[0_12px_40px_rgba(0,0,0,0.35)]">
             <Image
-              src="/khqr-coffee.jpg"
+              src="/eMoney QR.jpg"
               alt="KHQR payment code for Hoeum Senghun"
               width={720}
               height={1080}
