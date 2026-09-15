@@ -1,5 +1,6 @@
 import { CoffeeKhqr } from "@/components/CoffeeKhqr";
 import { QrDecoder } from "@/components/QrDecoder";
+import { QrGenerator } from "@/components/QrGenerator";
 
 export default function Home() {
   return (
@@ -10,15 +11,16 @@ export default function Home() {
             QR Decoder
           </p>
           <h1 className="mt-3 text-3xl font-semibold tracking-tight text-zinc-50 sm:text-4xl">
-            Turn a QR image into text
+            QR image to text, and back
           </h1>
           <p className="mt-3 max-w-xl text-base leading-7 text-zinc-400">
-            Upload a photo, open your camera, or paste a screenshot. Decoding
-            happens in your browser nothing is uploaded to a server.
+            Decode a photo, camera scan, or paste — or type a string and get a
+            QR image. Everything runs in your browser.
           </p>
         </header>
         <div className="flex flex-col gap-6">
           <QrDecoder />
+          <QrGenerator />
           <CoffeeKhqr />
         </div>
       </main>

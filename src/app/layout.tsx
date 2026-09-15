@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "QR Decoder",
   description:
-    "Convert a QR code image to text. Upload, scan with the camera, or paste a screenshot.",
+    "Convert a QR image to text, or turn text into a QR image. Upload, scan, paste, or type — all in your browser.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
