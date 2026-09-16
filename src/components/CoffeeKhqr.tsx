@@ -16,7 +16,7 @@ export function CoffeeKhqr() {
             It lands with Hoeum Senghun.
           </p>
           <a
-            href="/khqr-coffee.jpg"
+            href="/mykhqr.jpg"
             download="hoeum-senghun-khqr.jpg"
             className="mt-4 inline-flex rounded-xl border border-white/15 px-4 py-2.5 text-sm font-semibold text-zinc-100 transition hover:bg-white/10"
           >
@@ -26,7 +26,7 @@ export function CoffeeKhqr() {
         <figure className="mx-auto w-full max-w-[240px] shrink-0 sm:mx-0">
           <div className="overflow-hidden rounded-2xl bg-white p-2 shadow-[0_12px_40px_rgba(0,0,0,0.35)]">
             <Image
-              src="/eMoney QR.jpg"
+              src="/mykhqr.jpg"
               alt="KHQR payment code for Hoeum Senghun"
               width={720}
               height={1080}
