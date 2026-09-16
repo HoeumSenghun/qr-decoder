@@ -14,7 +14,7 @@ export default function Home() {
             QR image to text, and back
           </h1>
           <p className="mt-3 max-w-xl text-base leading-7 text-zinc-400">
-            Decode a photo, camera scan, or paste — or type a string and get a
+            Decode a photo, camera scan, or paste or type a string and get a
             QR image. Everything runs in your browser.
           </p>
         </header>
