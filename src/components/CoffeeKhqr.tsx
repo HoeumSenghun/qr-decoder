@@ -23,7 +23,7 @@ export function CoffeeKhqr() {
             Save QR image
           </a>
         </div>
-        <figure className="mx-auto w-full max-w-[240px] shrink-0 sm:mx-0">
+        <figure className="mx-auto w-full max-w-60 shrink-0 sm:mx-0">
           <div className="overflow-hidden rounded-2xl bg-white p-2 shadow-[0_12px_40px_rgba(0,0,0,0.35)]">
             <Image
               src="/mykhqr.jpg"

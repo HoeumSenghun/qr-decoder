@@ -107,7 +107,7 @@ export function QrGenerator() {
             </button>
           </div>
         </div>
-        <figure className="mx-auto w-full max-w-[240px] shrink-0 sm:mx-0 sm:pt-10">
+        <figure className="mx-auto w-full max-w-60 shrink-0 sm:mx-0 sm:pt-10">
           <div className="flex aspect-square items-center justify-center overflow-hidden rounded-2xl bg-white p-2 shadow-[0_12px_40px_rgba(0,0,0,0.35)]">
             {dataUrl ? (
               // eslint-disable-next-line @next/next/no-img-element

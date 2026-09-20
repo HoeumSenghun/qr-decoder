@@ -4,7 +4,7 @@ import { QrGenerator } from "@/components/QrGenerator";
 
 export default function Home() {
   return (
-    <div className="flex flex-1 flex-col bg-[radial-gradient(circle_at_top,_#163227_0%,_#09090b_42%)]">
+    <div className="flex flex-1 flex-col bg-[radial-gradient(circle_at_top,#163227_0%,#09090b_42%)]">
       <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col px-4 py-10 sm:px-6 sm:py-16">
         <header className="mb-8">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300">
