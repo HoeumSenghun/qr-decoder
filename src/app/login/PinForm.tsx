@@ -24,56 +24,40 @@ export function PinForm() {
 
   return (
     <form
-      className="mt-8"
       onSubmit={(event) => {
         event.preventDefault();
         submit(pin);
       }}
     >
-      <label htmlFor="passcode" className="sr-only">
+      <label htmlFor="passcode" className="mb-2 block text-sm font-medium text-zinc-300">
         6-digit passcode
       </label>
-      <div className="relative">
-        <input
-          id="passcode"
-          name="pin"
-          type="password"
-          inputMode="numeric"
-          autoComplete="one-time-code"
-          autoFocus
-          maxLength={PIN_LENGTH}
-          pattern="\d{6}"
-          disabled={pending}
-          value={pin}
-          onChange={(event) => {
-            const next = event.target.value.replace(/\D/g, "").slice(0, PIN_LENGTH);
-            setPin(next);
-            if (next.length === PIN_LENGTH) submit(next);
-          }}
-          className="absolute inset-0 z-10 cursor-text bg-transparent text-transparent caret-transparent"
-        />
-        <div className="flex justify-between gap-2 sm:gap-3">
-          {Array.from({ length: PIN_LENGTH }, (_, index) => (
-            <div
-              key={index}
-              className={`flex h-14 w-full items-center justify-center rounded-2xl border bg-zinc-950 text-2xl text-zinc-50 sm:h-16 ${
-                pin.length === index && !pending
-                  ? "border-emerald-400/80 ring-2 ring-emerald-400/30"
-                  : "border-white/10"
-              }`}
-            >
-              {pin[index] ? "•" : ""}
-            </div>
-          ))}
-        </div>
-      </div>
-      <p className="mt-4 min-h-6 text-sm text-rose-300" role="alert">
+      <input
+        id="passcode"
+        name="pin"
+        type="text"
+        inputMode="numeric"
+        autoComplete="one-time-code"
+        autoFocus
+        maxLength={PIN_LENGTH}
+        pattern="\d{6}"
+        disabled={pending}
+        value={pin}
+        placeholder="••••••"
+        onChange={(event) => {
+          const next = event.target.value.replace(/\D/g, "").slice(0, PIN_LENGTH);
+          setPin(next);
+          if (next.length === PIN_LENGTH) submit(next);
+        }}
+        className="h-16 w-full rounded-2xl border border-white/10 bg-zinc-950 px-4 text-center font-mono text-2xl tracking-[0.6em] text-zinc-50 outline-none transition placeholder:tracking-[0.6em] placeholder:text-zinc-600 focus:border-emerald-400/80 focus:ring-2 focus:ring-emerald-400/30 disabled:opacity-60"
+      />
+      <p className="mt-3 min-h-6 text-sm text-rose-300" role="alert">
         {error}
       </p>
       <button
         type="submit"
         disabled={pending || pin.length !== PIN_LENGTH}
-        className="mt-2 inline-flex w-full items-center justify-center rounded-2xl bg-emerald-500 px-4 py-3 text-sm font-semibold text-emerald-950 transition hover:bg-emerald-400 disabled:cursor-not-allowed disabled:bg-zinc-800 disabled:text-zinc-500"
+        className="mt-1 inline-flex w-full items-center justify-center rounded-2xl bg-emerald-500 px-4 py-3 text-sm font-semibold text-emerald-950 transition hover:bg-emerald-400 disabled:cursor-not-allowed disabled:bg-zinc-800 disabled:text-zinc-500"
       >
         {pending ? "Checking…" : "Unlock"}
       </button>
