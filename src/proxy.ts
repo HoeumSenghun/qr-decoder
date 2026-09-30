@@ -2,9 +2,9 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { GATE_COOKIE, isValidGateToken } from "@/lib/gate";
 
-export function proxy(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  const authed = isValidGateToken(request.cookies.get(GATE_COOKIE)?.value);
+  const authed = await isValidGateToken(request.cookies.get(GATE_COOKIE)?.value);
 
   if (pathname === "/login") {
     if (authed) {

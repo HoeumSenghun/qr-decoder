@@ -4,7 +4,7 @@ import { GATE_COOKIE, isValidGateToken } from "@/lib/gate";
 
 export default async function ToolLayout({ children }: LayoutProps<"/">) {
   const token = (await cookies()).get(GATE_COOKIE)?.value;
-  if (!isValidGateToken(token)) {
+  if (!(await isValidGateToken(token))) {
     redirect("/login");
   }
   return children;

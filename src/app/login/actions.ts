@@ -4,7 +4,7 @@ import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
 import {
   GATE_COOKIE,
-  GATE_COOKIE_OPTIONS,
+  gateCookieOptions,
   getGateToken,
   isValidPin,
 } from "@/lib/gate";
@@ -61,25 +61,25 @@ export async function unlock(
     };
   }
 
-  if (!isValidPin(pin)) {
+  if (!(await isValidPin(pin))) {
     recordFailure(key);
     await new Promise((resolve) => setTimeout(resolve, FAIL_DELAY_MS));
     return { ok: false, error: "Wrong passcode." };
   }
 
-  const token = getGateToken();
+  const token = await getGateToken();
   if (!token) {
     return { ok: false, error: "Passcode is not configured." };
   }
 
   clearFailures(key);
   const jar = await cookies();
-  jar.set(GATE_COOKIE, token, GATE_COOKIE_OPTIONS);
+  jar.set(GATE_COOKIE, token, gateCookieOptions());
   redirect("/");
 }
 
 export async function lock(): Promise<void> {
   const jar = await cookies();
-  jar.set(GATE_COOKIE, "", { ...GATE_COOKIE_OPTIONS, maxAge: 0 });
+  jar.set(GATE_COOKIE, "", { ...gateCookieOptions(), maxAge: 0 });
   redirect("/login");
 }
