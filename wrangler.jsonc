@@ -1,5 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
+  // Set the 6-digit PIN with: npx wrangler secret put ACCESS_PIN
   "name": "qr-decoder",
   "main": ".open-next/worker.js",
   "compatibility_date": "2026-09-15",
